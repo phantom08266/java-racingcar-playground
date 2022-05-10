@@ -28,11 +28,11 @@ ex) git checkout -b apply-feedback
 ### Todo List
 ```
 - 문자열이 주어지면 덧셈 연산을 한다.[]
-  - 빈 문자열, Null 입력 시 0을 반환한다. [] checker method
-  - 숫자 하나인 문자열은 그대로 숫자를 반환한다. [] checker method
+  - 빈 문자열, Null 입력 시 0을 반환한다. [0] checker method
+  - 숫자 하나인 문자열은 그대로 숫자를 반환한다. [0] checker method
   - 음수를 입력할 경우 RuntimeException이 발생한다. [] valid method
   - 커스텀 구분자인지 아닌지 구별할 수 있어야 한다.[] checker method
-    - 쉼표(,) 또는 콜론(:)을 구분자로 가지는 문자열로 구분자 처리를 하여 덧셈연산을 한다. [] 
+    - 쉼표(,) 또는 콜론(:)을 구분자로 가지는 문자열로 구분자 처리를 하여 덧셈연산을 한다. [0] 
     - 커스텀 구분자를 지정할 수 있다.(// 와 \n 사이에 있는 문자로 커스텀 한다.) []
   - 숫자 위치에 이외의 값을 입력한 경우는 RuntimeException이 발생한다. [] valid method
 ```
