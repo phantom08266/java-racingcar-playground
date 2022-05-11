@@ -18,8 +18,8 @@ public class AddCalculatorTest {
     @Test
     @DisplayName("입력문자로 빈 문자열, null이 주어지면 0을 반환한다")
     void test1() {
-        assertThat(addCalculator.calculate(null)).isEqualTo(0);
-        assertThat(addCalculator.calculate("")).isEqualTo(0);
+        assertThat(addCalculator.calculate(null)).isZero();
+        assertThat(addCalculator.calculate("")).isZero();
     }
 
     @Test
@@ -31,9 +31,12 @@ public class AddCalculatorTest {
     @Test
     @DisplayName("숫자 하나인 문자열일 경우 숫자이외의 문자열 혹은 음수값일 경우 RuntimeException이 발생한다.")
     void test3() {
-//        assertThatThrownBy(() -> addCalculator.calculate("-3"))
-//                .isInstanceOf(RuntimeException.class);
-//        assertThatThrownBy(() -> addCalculator.calculate("//")).isInstanceOf()
+        //Todo
+        assertThatThrownBy(() -> addCalculator.calculate("-3"))
+                .isInstanceOf(RuntimeException.class);
+        assertThatThrownBy(() -> addCalculator.calculate("//"))
+                .hasMessageContaining("특수 문자는 연산할 수 없습니다")
+                .isInstanceOf(RuntimeException.class);
     }
 
     @Test
@@ -42,4 +45,19 @@ public class AddCalculatorTest {
         assertThat(addCalculator.calculate("1,2,3")).isEqualTo(6);
         assertThat(addCalculator.calculate("1,2:3")).isEqualTo(6);
     }
+
+    @Test
+    @DisplayName("커스텀 구분자를 지정할 수 있다.(// 와 \n 사이에 있는 문자로 커스텀 한다.)")
+    void test5() {
+        assertThat(addCalculator.calculate("//;\n1;2;3")).isEqualTo(6);
+    }
+
+    @Test
+    @DisplayName("음수를 입력할 경우 RuntimeException이 발생한다")
+    void test6() {
+        assertThatThrownBy(() -> addCalculator.calculate("1,2,-3"))
+                .isInstanceOf(IllegalArgumentException.class);
+    }
+
+
 }

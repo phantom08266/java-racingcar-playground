@@ -27,12 +27,18 @@ ex) git checkout -b apply-feedback
 
 ### Todo List
 ```
-- 문자열이 주어지면 덧셈 연산을 한다.[]
+- 문자열이 주어지면 덧셈 연산을 한다.[0]
   - 빈 문자열, Null 입력 시 0을 반환한다. [0] checker method
   - 숫자 하나인 문자열은 그대로 숫자를 반환한다. [0] checker method
-  - 음수를 입력할 경우 RuntimeException이 발생한다. [] valid method
-  - 커스텀 구분자인지 아닌지 구별할 수 있어야 한다.[] checker method
+  - 음수를 입력할 경우 RuntimeException이 발생한다. [0] valid method
+  - 커스텀 구분자인지 아닌지 구별할 수 있어야 한다.[0] checker method
     - 쉼표(,) 또는 콜론(:)을 구분자로 가지는 문자열로 구분자 처리를 하여 덧셈연산을 한다. [0] 
-    - 커스텀 구분자를 지정할 수 있다.(// 와 \n 사이에 있는 문자로 커스텀 한다.) []
-  - 숫자 위치에 이외의 값을 입력한 경우는 RuntimeException이 발생한다. [] valid method
+    - 커스텀 구분자를 지정할 수 있다.(// 와 \n 사이에 있는 문자로 커스텀 한다.) [0]
+  - 숫자 위치에 이외의 값을 입력한 경우는 RuntimeException이 발생한다. [0] valid method
+```
+
+### 고민했던 부분들과 크루원과 같이 논의해볼 내용
+```
+1. 단위 테스트 이름은 대충! 대신 Junit5에서 지원하는 @DisplayName을 잘 작성하자! => 테스트는 해당 프로그램에 대한 기능의 명세이기 때문!
+2. 정규표현식 개념 정리
 ```
