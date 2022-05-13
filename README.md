@@ -24,3 +24,18 @@ git checkout main // 기본 브랜치가 main인 경우
 git checkout -b 브랜치이름
 ex) git checkout -b apply-feedback
 ```
+
+### 기능정의
+```
+- 사용자 입력을 받는 입력부 구현
+    - 자동차 이름은 ,로 구분한다
+    - 시도할 횟수 입력 구현 (loopCount)
+- 자동차 이름, 좌표 값을 관리하는 클래스
+    - 자동차 이름은 5자를 초과할 수 없다. 
+    - 0~9 사이의 랜덤값을 구한 후 random값이 4이상일 경우 전진
+```
+
+### 크루원과 논의할 내용
+1. 일급 컬렉션 (https://jojoldu.tistory.com/412)
+2. random클래스에 대해서 개념정리 할것.(Random, ThreadLocalRandom, SecureRandom)
+3. [Java Stream API는 왜 for-loop보다 느릴까](https://jypthemiracle.medium.com/java-stream-api%EB%8A%94-%EC%99%9C-for-loop%EB%B3%B4%EB%8B%A4-%EB%8A%90%EB%A6%B4%EA%B9%8C-50dec4b9974b)
