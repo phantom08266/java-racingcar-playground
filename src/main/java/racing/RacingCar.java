@@ -5,6 +5,7 @@ public class RacingCar {
     public static final int STANDARD_MOVE_NUMBER = 4;
     private final String name;
     private int position;
+
     public RacingCar(String carName) {
         validRacingCarNameLength(carName);
         this.name = carName;
