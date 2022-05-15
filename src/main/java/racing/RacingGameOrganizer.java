@@ -1,8 +1,8 @@
 package racing;
 
+import java.security.SecureRandom;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Random;
 import java.util.stream.Collectors;
 
 public class RacingGameOrganizer {
@@ -42,13 +42,14 @@ public class RacingGameOrganizer {
             .max()
             .orElse(0);
 
-        System.out.println("최대 값 : "+maxPosition);
+        System.out.println("최대 값 : " + maxPosition);
         return racingCars.stream()
             .filter(car -> car.getPosition() == maxPosition)
             .collect(Collectors.toList());
     }
 
     protected int createGameNumber() {
-        return new Random().nextInt(8) + 1;
+        SecureRandom secureRandom = new SecureRandom();
+        return secureRandom.nextInt(8) + 1;
     }
 }
