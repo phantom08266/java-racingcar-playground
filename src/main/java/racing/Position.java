@@ -42,4 +42,11 @@ public class Position {
     public int hashCode() {
         return Objects.hash(point);
     }
+
+    public Position compareTo(Position maxPosition) {
+        if (this.point > maxPosition.point) {
+            return this;
+        }
+        return maxPosition;
+    }
 }
